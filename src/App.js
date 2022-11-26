@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
+import GenerateForm from "./components/generate-form";
+import Graph from "./components/graph";
 
 function App() {
+  const [slices, setSlices] = React.useState(0);
+  const [rows, setRows] = React.useState(0);
+  const [isGraphGenerated, setIsGraphGenerated] = React.useState(false);
+  const generateGraph = (s, r) => {
+    setSlices(s);
+    setRows(r);
+    setIsGraphGenerated(true);
+    console.log(`Slices: ${slices} Rows: ${rows} `);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {isGraphGenerated ? (
+        <Graph slices={slices} rows={rows} />
+      ) : (
+        <GenerateForm generateGraph={generateGraph} />
+      )}
     </div>
   );
 }
