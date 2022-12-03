@@ -3,13 +3,24 @@ import "../styles/Graph.css";
 import CenterSlice from "./center-slice";
 function Graph(props) {
   const centerSlicesArr = [];
-  for (let i = 0; i < props.slices; i++) {
-    centerSlicesArr.push(
-      <CenterSlice index={i} key={i} slices={props.slices} />
-    );
+  let count = 10000;
+  for (let i = 1; i <= props.rows; i++) {
+    const x = props.slices * i;
+    for (let j = 0; j < x; j++) {
+      centerSlicesArr.push(
+        <CenterSlice
+          index={count}
+          key={`Row${i}:Slice${j}`}
+          slices={props.slices}
+          row={i}
+        />
+      );
+      count--;
+    }
   }
   return (
     <div className="PizzaContainer">
+      <div className="PizzaBackground"></div>
       {centerSlicesArr.map((item) => {
         return item;
       })}
@@ -19,24 +30,12 @@ function Graph(props) {
 
 export default Graph;
 
-// <div class="PizzaContainer">
-//   <div class="PizzaBackground"></div>
-//   <div id="PizzaSliceYellow" class="hold">
-//     <div class="Pizza"></div>
-//   </div>
-//   <div id="PizzaSliceBlue" class="hold">
-//     <div class="Pizza"></div>
-//   </div>
-//   <div id="PizzaSliceRed" class="hold">
-//     <div class="Pizza"></div>
-//   </div>
-//   <div id="PizzaSliceOlive" class="hold">
-//     <div class="Pizza"></div>
-//   </div>
-//   <div id="PizzaSliceOrange" class="hold">
-//     <div class="Pizza"></div>
-//   </div>
-//   <div id="PizzaSliceLime" class="hold">
-//     <div class="Pizza"></div>
-//   </div>
-// </div>
+/*
+each row has slices * row slices
+
+  for (let i = 1; i <= props.rows; i++) {
+    for (let j = 0; j < props.slices * i; j++) {
+      <CenterSlice index={j} key={i.toString() + j.toString} slices={props.slices} row={i} />
+    }
+  }
+*/
