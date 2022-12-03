@@ -1,9 +1,9 @@
 .PizzaContainer {
   height: 100px;
   width: 100px;
-  margin: 0 0 20px 20px;
+  margin: 200px 0 20px 20px;
 }
-.hold {
+/* .hold {
   position: absolute;
   width: 200px;
   height: 200px;
@@ -12,13 +12,60 @@
 }
 .Pizza {
   position: absolute;
-  /*  width:100px;
-    height:200px;
-    border-radius:100px 0 0 100px;
-    transform-origin:right center; */
   background-color: blue;
   width: 200px;
   height: 200px;
-  clip: rect(0px, 100px, 200px, 0px);
-  border-radius: 100px;
+
+  clip: rect(0px, 100px, 200px, 0px); 
+  border: solid;
+  border-radius: 50%;
+} */
+
+.menu {
+  position: relative;
+
+  list-style: none;
+  margin: 30px auto;
+
+  /* padding trick for maintaining aspect ratio */
+  height: 0;
+  padding: 0;
+  padding-top: 70%;
+  width: 70%;
+}
+.menu li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  clip-path: url(#sector);
+}
+.menu li:hover {
+  background-color: gold;
+}
+.one {
+  background-color: #a5e2f3;
+  transform: rotate(0deg);
+}
+.two {
+  background-color: #a5e2f3;
+  transform: rotate(-60deg);
+}
+.three {
+  background-color: #a5e2f3;
+  transform: rotate(-120deg);
+}
+.four {
+  background-color: #a5e2f3;
+  transform: rotate(-180deg);
+}
+.five {
+  background-color: #a5e2f3;
+  transform: rotate(-240deg);
+}
+.six {
+  background-color: #a5e2f3;
+  transform: rotate(-300deg);
 }
