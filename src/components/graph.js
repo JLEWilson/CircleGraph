@@ -28,13 +28,3 @@ function Graph(props) {
 }
 
 export default Graph;
-
-/*
-each row has slices * row slices
-
-  for (let i = 1; i <= props.rows; i++) {
-    for (let j = 0; j < props.slices * i; j++) {
-      <CenterSlice index={j} key={i.toString() + j.toString} slices={props.slices} row={i} />
-    }
-  }
-*/
