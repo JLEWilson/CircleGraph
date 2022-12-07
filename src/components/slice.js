@@ -31,7 +31,7 @@ const CenterSlice = (props) => {
   const rotation = props.index * centerSliceDegrees;
   const rotString = "rotate(" + rotation + "deg)";
   //Position
-  const startPos = 400;
+  const startPos = 500;
   const offsetNum = startPos - halfBase;
   const offset = f(offsetNum);
   const startClickOffset = 50;
@@ -84,10 +84,3 @@ const CenterSlice = (props) => {
   );
 };
 export default CenterSlice;
-
-/*
-CURRENT PROBLEMS
-
-invisible parts of the divs are clickable
-maybe pointer events can fix
-*/
