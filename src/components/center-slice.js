@@ -1,14 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/Graph.css";
-const colors = ["Snow", "MintCream", "black", "white", "orange"];
+const colors = [
+  "Snow",
+  "MintCream",
+  "black",
+  "white",
+  "orange",
+  "Snow",
+  "MintCream",
+  "black",
+  "white",
+  "orange",
+];
 
 const CenterSlice = (props) => {
   const [colorIndex, setColorIndex] = React.useState(
     props.index % 2 === 0 ? 0 : 1
   );
   const [btnColor, setBtnColor] = React.useState(colors[colorIndex]);
+  useEffect(() => {}, [btnColor]);
   //Sizing
-  const baseSize = props.row * 100; // Will need to pass this into each slice
+  const baseSize = props.row * 100;
   const halfBase = baseSize / 2;
   const f = (number) => number + "px";
   const primary = f(baseSize);
@@ -22,12 +34,11 @@ const CenterSlice = (props) => {
   const startPos = 400;
   const offsetNum = startPos - halfBase;
   const offset = f(offsetNum);
+  const startClickOffset = 50;
+  const clickOffset = startClickOffset - props.row;
+  const cOffset = clickOffset.toString() + "%";
   return (
     <div
-      onClick={() => {
-        setColorIndex(1 + colorIndex);
-        setBtnColor(colors[colorIndex]);
-      }}
       style={{
         position: "absolute",
         width: primary,
@@ -37,13 +48,10 @@ const CenterSlice = (props) => {
         top: offset,
         transform: rotString,
         zIndex: props.index,
+        pointerEvents: "none",
       }}
     >
       <div
-        onClick={() => {
-          setColorIndex(1 + colorIndex);
-          setBtnColor(colors[colorIndex]);
-        }}
         style={{
           backgroundColor: btnColor,
           position: "absolute",
@@ -53,12 +61,28 @@ const CenterSlice = (props) => {
           boxShadow: "0px 1px inset",
           borderRadius: "50%",
           transform: initialRotationString,
+          pointerEvents: "none",
         }}
-      ></div>
+      >
+        <div
+          onClick={() => {
+            setColorIndex(1 + colorIndex);
+            setBtnColor(colors[colorIndex]);
+            console.log(`clicked ${props.index}`);
+          }}
+          style={{
+            position: "absolute",
+            top: "5px",
+            right: cOffset,
+            height: "25%",
+            width: "25%",
+            pointerEvents: "auto",
+          }}
+        ></div>
+      </div>
     </div>
   );
 };
-
 export default CenterSlice;
 
 /*
