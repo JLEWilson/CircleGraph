@@ -3,7 +3,7 @@ import "../styles/Graph.css";
 import CenterSlice from "./center-slice";
 function Graph(props) {
   const centerSlicesArr = [];
-  let count = 10000;
+  let count = 0;
   for (let i = 1; i <= props.rows; i++) {
     const x = props.slices * i;
     for (let j = 0; j < x; j++) {
@@ -20,7 +20,6 @@ function Graph(props) {
   }
   return (
     <div className="PizzaContainer">
-      <div className="PizzaBackground"></div>
       {centerSlicesArr.map((item) => {
         return item;
       })}
