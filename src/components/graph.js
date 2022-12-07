@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/Graph.css";
-import CenterSlice from "./center-slice";
+import CenterSlice from "./slice";
 function Graph(props) {
   const centerSlicesArr = [];
   let count = 0;
