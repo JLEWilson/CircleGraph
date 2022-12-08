@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/http//JLEWilson.github.io/CircleGraph/static/css/main.fbaf9741.css",
-    "main.js": "/http//JLEWilson.github.io/CircleGraph/static/js/main.36da9945.js",
-    "static/js/787.e62c59b6.chunk.js": "/http//JLEWilson.github.io/CircleGraph/static/js/787.e62c59b6.chunk.js",
-    "index.html": "/http//JLEWilson.github.io/CircleGraph/index.html",
-    "main.fbaf9741.css.map": "/http//JLEWilson.github.io/CircleGraph/static/css/main.fbaf9741.css.map",
-    "main.36da9945.js.map": "/http//JLEWilson.github.io/CircleGraph/static/js/main.36da9945.js.map",
-    "787.e62c59b6.chunk.js.map": "/http//JLEWilson.github.io/CircleGraph/static/js/787.e62c59b6.chunk.js.map"
+    "main.css": "/CircleGraph/static/css/main.fbaf9741.css",
+    "main.js": "/CircleGraph/static/js/main.5b60cdd8.js",
+    "static/js/787.e62c59b6.chunk.js": "/CircleGraph/static/js/787.e62c59b6.chunk.js",
+    "index.html": "/CircleGraph/index.html",
+    "main.fbaf9741.css.map": "/CircleGraph/static/css/main.fbaf9741.css.map",
+    "main.5b60cdd8.js.map": "/CircleGraph/static/js/main.5b60cdd8.js.map",
+    "787.e62c59b6.chunk.js.map": "/CircleGraph/static/js/787.e62c59b6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fbaf9741.css",
-    "static/js/main.36da9945.js"
+    "static/js/main.5b60cdd8.js"
   ]
 }
