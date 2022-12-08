@@ -1,26 +1,17 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "../styles/Graph.css";
-const colors = [
-  "Snow",
-  "MintCream",
-  "black",
-  "white",
-  "orange",
-  "Snow",
-  "MintCream",
-  "black",
-  "white",
-  "orange",
-];
+const colors = ["Snow", "MintCream"];
 
 const CenterSlice = (props) => {
-  const [colorIndex, setColorIndex] = React.useState(
-    props.index % 2 === 0 ? 0 : 1
-  );
+  const [colorIndex] = React.useState(props.index % 2 === 0 ? 0 : 1);
   const [btnColor, setBtnColor] = React.useState(colors[colorIndex]);
-  useEffect(() => {}, [btnColor]);
   //Sizing
-  const baseSize = props.row * 100;
+
+  const baseSize = props.row * props.allowance;
+  /*
+    CHANGE BASE SIZE TO BE BASED ON WINDOW HEIGHT/WIDTH, CONTAINER SIZE, OR OTHER 
+    while leaving room for the color palette
+  */
   const halfBase = baseSize / 2;
   const f = (number) => number + "px";
   const primary = f(baseSize);
@@ -31,7 +22,7 @@ const CenterSlice = (props) => {
   const rotation = props.index * centerSliceDegrees;
   const rotString = "rotate(" + rotation + "deg)";
   //Position
-  const startPos = 500;
+  const startPos = 470;
   const offsetNum = startPos - halfBase;
   const offset = f(offsetNum);
   const startClickOffset = 50;
@@ -66,9 +57,7 @@ const CenterSlice = (props) => {
       >
         <div
           onClick={() => {
-            setColorIndex(1 + colorIndex);
-            setBtnColor(colors[colorIndex]);
-            console.log(`clicked ${props.index}`);
+            setBtnColor(props.color);
           }}
           style={{
             position: "absolute",
