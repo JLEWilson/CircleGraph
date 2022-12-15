@@ -44,40 +44,42 @@ function App() {
   return (
     <div>
       {isGraphGenerated ? (
-        <Graph color={activeColor} slices={slices} rows={rows} />
+        <div>
+          <Graph color={activeColor} slices={slices} rows={rows} />
+          <div
+            style={{
+              position: "absolute",
+              top: "0px",
+              right: "0px",
+              width: "220px",
+              paddingRight: "0px",
+              paddingTop: "0px",
+            }}
+          >
+            <ColorSwatch
+              color={activeColor}
+              setColor={setActiveColor}
+              submit={handleNewColor}
+            />
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <ColorPalette setColor={setActiveColor} colors={colors} />
+            </div>
+          </div>
+          {errorMessageVisible && (
+            <span style={{ color: "red", position: "absolute" }}>
+              {errorMessage}
+            </span>
+          )}
+        </div>
       ) : (
         <GenerateForm generateGraph={generateGraph} />
       )}
-      <div
-        style={{
-          position: "absolute",
-          top: "0px",
-          right: "0px",
-          width: "220px",
-          paddingRight: "0px",
-          paddingTop: "0px",
-        }}
-      >
-        <ColorSwatch
-          color={activeColor}
-          setColor={setActiveColor}
-          submit={handleNewColor}
-        />
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <ColorPalette setColor={setActiveColor} colors={colors} />
-        </div>
-        {errorMessageVisible && (
-          <span style={{ color: "red", position: "absolute" }}>
-            {errorMessage}
-          </span>
-        )}
-      </div>
     </div>
   );
 }

@@ -2,10 +2,10 @@ import React from "react";
 import "../styles/Graph.css";
 import CenterSlice from "./slice";
 function Graph(props) {
-  const smallestSize =
-    window.innerWidth - 220 < window.innerHeight
-      ? window.innerWidth - 220
-      : window.innerHeight;
+  const width = window.innerWidth - 110;
+  const height = window.innerHeight - 110;
+  const wWider = width < height;
+  const smallestSize = wWider ? width : height;
   const allowance = Math.floor(smallestSize / props.rows);
   const centerSlicesArr = [];
   let count = 0;
@@ -26,7 +26,7 @@ function Graph(props) {
     }
   }
   return (
-    <div className="PizzaContainer">
+    <div className="GraphContainer" style={{ marginLeft: +"px" }}>
       {centerSlicesArr.map((item) => {
         return item;
       })}

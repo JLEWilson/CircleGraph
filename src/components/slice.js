@@ -63,8 +63,8 @@ const CenterSlice = (props) => {
             position: "absolute",
             top: "5px",
             right: cOffset,
-            height: "25%",
-            width: "25%",
+            height: "26%",
+            width: "2%",
             pointerEvents: "auto",
           }}
         ></div>

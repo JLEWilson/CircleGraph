@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  height: 100%;
+  margin: auto;
+}
+.text {
+  font-size: x-large;
+  font-family: "Garamond";
+}
+.input {
+  width: 50px;
+  margin: 20px;
+}
+.label {
+  margin-right: 0px;
+  margin-left: auto;
+}
